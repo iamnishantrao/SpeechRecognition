@@ -132,6 +132,12 @@ class MainVC: UIViewController, SFSpeechRecognizerDelegate, AVAudioPlayerDelegat
         greenActivityIndicator.isHidden = false
         greenActivityIndicator.startAnimating()
         
+        if audioEngine.isRunning {
+            
+            audioEngine.stop()
+            audioRequest.endAudio()
+        }
+        
         // Cancel the previous task if it's running.
         if let recognitionTask = recognitionTask {
             recognitionTask.cancel()
