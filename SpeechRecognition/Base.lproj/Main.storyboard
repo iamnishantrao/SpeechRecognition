@@ -143,7 +143,9 @@
                     </view>
                     <connections>
                         <outlet property="greenActivityIndicator" destination="YlS-ZD-rf1" id="dmr-yI-p9w"/>
+                        <outlet property="greenButton" destination="w4q-VK-iC3" id="CoL-AO-YO3"/>
                         <outlet property="redActivityIndicator" destination="TXe-gs-gQJ" id="okR-fN-zv3"/>
+                        <outlet property="redButton" destination="sy1-AT-XDj" id="Gt4-Ey-3tf"/>
                         <outlet property="transcribedText" destination="2Un-om-Jdc" id="iiB-dG-szQ"/>
                     </connections>
                 </viewController>
