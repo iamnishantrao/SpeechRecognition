@@ -31,6 +31,7 @@ class MainVC: UIViewController, SFSpeechRecognizerDelegate, AVAudioPlayerDelegat
     
     private var liveAudio: Bool!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -126,7 +127,7 @@ class MainVC: UIViewController, SFSpeechRecognizerDelegate, AVAudioPlayerDelegat
     
     // Transcribe live audio.
     // Throws is used to handle errors throws by audioSession.
-    @IBAction func greenButtonPressed(_ sender: Any) throws {
+    @IBAction func greenButtonPressed(_ sender: Any) {
         
         greenActivityIndicator.isHidden = false
         greenActivityIndicator.startAnimating()
@@ -138,9 +139,17 @@ class MainVC: UIViewController, SFSpeechRecognizerDelegate, AVAudioPlayerDelegat
         }
         
         let audioSession = AVAudioSession.sharedInstance()
-        try audioSession.setCategory(AVAudioSessionCategoryRecord)
-        try audioSession.setMode(AVAudioSessionModeMeasurement)
-        try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
+     
+        do {
+            
+            try audioSession.setCategory(AVAudioSessionCategoryRecord)
+            try audioSession.setMode(AVAudioSessionModeMeasurement)
+            try audioSession.setActive(true, with: .notifyOthersOnDeactivation)
+            
+        } catch {
+            
+            print("Error occurred while setting Audio Session.")
+        }
         
         audioRequest = SFSpeechAudioBufferRecognitionRequest()
         
@@ -185,12 +194,18 @@ class MainVC: UIViewController, SFSpeechRecognizerDelegate, AVAudioPlayerDelegat
                 self.audioRequest?.append(buffer)
             }
 
-            audioEngine.prepare()
+            self.audioEngine.prepare()
+            
+            do {
+                
+                try self.audioEngine.start()
 
-            try audioEngine.start()
+            } catch {
+                
+                print("Error occurred while starting Audio Engine.")
+            }
 
         }
-        
     }
     
     // function to analyze when AVAudioPlayer has finished playing

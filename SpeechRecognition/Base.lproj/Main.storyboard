@@ -47,7 +47,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lf7-cQ-trV">
-                                <rect key="frame" x="37.5" y="597" width="300" height="50"/>
+                                <rect key="frame" x="38" y="597" width="300" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transcribe Recorded Audio" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GIv-iV-N9T">
                                         <rect key="frame" x="0.0" y="0.0" width="150" height="50"/>
@@ -68,7 +68,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="5C8-PR-LyZ">
-                                <rect key="frame" x="87.5" y="517" width="200" height="60"/>
+                                <rect key="frame" x="88" y="517" width="200" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sy1-AT-XDj" customClass="CircleButton" customModule="SpeechRecognition" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
@@ -104,41 +104,38 @@
                                     </button>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacing="80" translatesAutoresizingMaskIntoConstraints="NO" id="OAQ-nO-Gke">
-                                <rect key="frame" x="87" y="517" width="200" height="60"/>
-                                <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="TXe-gs-gQJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="1l0-zy-mSk"/>
-                                            <constraint firstAttribute="height" constant="60" id="d0g-63-8c7"/>
-                                        </constraints>
-                                    </activityIndicatorView>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="YlS-ZD-rf1">
-                                        <rect key="frame" x="140" y="0.0" width="60" height="60"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="60" id="0rP-iH-02U"/>
-                                            <constraint firstAttribute="width" constant="60" id="mTI-fe-6ej"/>
-                                        </constraints>
-                                    </activityIndicatorView>
-                                </subviews>
-                            </stackView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="TXe-gs-gQJ">
+                                <rect key="frame" x="88" y="517" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="1l0-zy-mSk"/>
+                                    <constraint firstAttribute="height" constant="60" id="d0g-63-8c7"/>
+                                </constraints>
+                            </activityIndicatorView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="YlS-ZD-rf1">
+                                <rect key="frame" x="228" y="517" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="0rP-iH-02U"/>
+                                    <constraint firstAttribute="width" constant="60" id="mTI-fe-6ej"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="5C8-PR-LyZ" firstAttribute="centerX" secondItem="OAQ-nO-Gke" secondAttribute="centerX" id="0oY-ty-Ld5"/>
+                            <constraint firstItem="sy1-AT-XDj" firstAttribute="centerX" secondItem="TXe-gs-gQJ" secondAttribute="centerX" id="177-AT-ed5"/>
                             <constraint firstItem="2Un-om-Jdc" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="4X4-WP-Rzy"/>
                             <constraint firstItem="lf7-cQ-trV" firstAttribute="top" secondItem="5C8-PR-LyZ" secondAttribute="bottom" constant="20" id="4Xo-le-nvZ"/>
                             <constraint firstItem="lf7-cQ-trV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="4mC-7o-6tU"/>
+                            <constraint firstItem="w4q-VK-iC3" firstAttribute="centerX" secondItem="YlS-ZD-rf1" secondAttribute="centerX" id="9lt-RJ-Icv"/>
                             <constraint firstItem="5C8-PR-LyZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="IAq-eE-wHB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2Un-om-Jdc" secondAttribute="trailing" id="JvE-6d-AH3"/>
                             <constraint firstItem="yrN-YH-tEY" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Q3f-xs-OsH"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lf7-cQ-trV" secondAttribute="bottom" constant="20" id="Rdl-5g-VtK"/>
                             <constraint firstItem="yrN-YH-tEY" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="VIA-dh-MOy"/>
                             <constraint firstItem="5C8-PR-LyZ" firstAttribute="top" secondItem="2Un-om-Jdc" secondAttribute="bottom" constant="25" id="a5w-Se-aX7"/>
+                            <constraint firstItem="w4q-VK-iC3" firstAttribute="centerY" secondItem="YlS-ZD-rf1" secondAttribute="centerY" id="bJ9-vB-JFi"/>
                             <constraint firstAttribute="trailing" secondItem="yrN-YH-tEY" secondAttribute="trailing" id="eMO-as-SAr"/>
-                            <constraint firstItem="5C8-PR-LyZ" firstAttribute="centerY" secondItem="OAQ-nO-Gke" secondAttribute="centerY" id="gSe-OZ-GPb"/>
                             <constraint firstItem="2Un-om-Jdc" firstAttribute="top" secondItem="yrN-YH-tEY" secondAttribute="bottom" constant="20" id="jdN-u8-VKf"/>
+                            <constraint firstItem="sy1-AT-XDj" firstAttribute="centerY" secondItem="TXe-gs-gQJ" secondAttribute="centerY" id="ykr-lO-o46"/>
                         </constraints>
                     </view>
                     <connections>
